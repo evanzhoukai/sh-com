@@ -1,0 +1,91 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.sh'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    //mavenLocal()
+    maven {
+        url 'http://nexus.mwbyd.cn/nexus/content/groups/public/'
+    }
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    mavenCentral()
+}
+
+
+dependencies {
+
+    compile 'org.projectlombok:lombok:1.18.0'
+    compile 'org.springframework:spring-core:4.3.18.RELEASE'
+    compile 'org.springframework:spring-context-support:4.3.18.RELEASE'
+    compile 'org.springframework:spring-beans:4.3.18.RELEASE'
+    compile 'org.springframework:spring-oxm:4.3.18.RELEASE'
+    compile "org.springframework:spring-jms:4.3.18.RELEASE"
+    compile 'org.springframework.retry:spring-retry:1.2.2.RELEASE'
+    compile('org.springframework:spring-context:4.3.18.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+    compile("com.101tec:zkclient:0.10") {
+        exclude(module: 'log4j')
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile('org.apache.zookeeper:zookeeper:3.4.12') {
+        exclude(module: 'log4j')
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile("com.baidu.disconf:disconf-client:2.6.36") {
+        exclude(module: 'log4j')
+        exclude(module: 'slf4j-log4j12')
+    }
+    compile('com.alibaba:dubbo:2.8.4a') {
+        exclude(module: 'log4j')
+        exclude(module: 'logback-classic')
+        exclude(module: 'slf4j-log4j12')
+    }
+
+    compile "org.apache.activemq:activemq-client:5.15.4"
+    compile "org.apache.activemq:activemq-pool:5.15.4"
+
+    compile 'org.apache.commons:commons-pool2:2.6.0'
+    compile('org.quartz-scheduler:quartz:2.3.0') { exclude module: 'c3p0' }
+
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-core:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-api:2.11.1'
+    compile 'com.lmax:disruptor:3.3.11'
+
+    compile "redis.clients:jedis:2.9.0"
+    compile 'com.alibaba:druid:1.1.10'
+    compile 'org.aspectj:aspectjrt:1.8.10'
+    compile 'org.aspectj:aspectjweaver:1.8.10'
+    compile 'javax.el:javax.el-api:3.0.0'
+    compile 'org.glassfish.web:javax.el:2.2.6'
+    compile 'com.timgroup:java-statsd-client:3.1.0'
+    compile 'com.github.ben-manes.caffeine:caffeine:2.6.2'
+    compile 'com.github.ben-manes.caffeine:guava:2.6.2'
+    compile 'com.github.ben-manes.caffeine:jcache:2.6.2'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+    compile 'javax.el:javax.el-api:3.0.0'
+    compile 'org.glassfish.web:javax.el:2.2.6'
+
+    compile 'com.jsoniter:jsoniter:0.9.22'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'cn.hutool:hutool-crypto:4.1.19'
+    compile('cn.mwee:base_common_middleware:1.0.5') {
+        exclude(group: 'org.springframework')
+    }
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.7.0'
+
+
+    compile "junit:junit:4.12"
+}
