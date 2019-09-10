@@ -11,9 +11,10 @@ public class OOMTest {
 
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
-        int max = 10000;
+        int max = 1000000;
         List<Person> list = new ArrayList<>(max);
         for (int j = 0; j < max; j++) {
+            Thread.sleep(100L);
             Person p = new Person();
             p.setAge(100);
             p.setName("菩提树下的杨过");
