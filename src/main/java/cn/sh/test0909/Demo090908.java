@@ -6,6 +6,10 @@ package cn.sh.test0909;
  */
 public class Demo090908 {
 
+    /***
+     * [-10,9,20,null,null,15,7]
+     * @param args
+     */
     public static void main(String[] args) {
 
 
