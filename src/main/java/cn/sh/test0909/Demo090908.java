@@ -22,6 +22,8 @@ public class Demo090908 {
         TreeNode node7 = new TreeNode(7);
         node1.left = node2;
         node1.right=node3;
+        node2.left = node4;
+        node2.right = node5;
         node3.left=node6;
         node3.right = node7;
         int i = maxPathSum(node1);
