@@ -1,5 +1,6 @@
 package cn.sh.test0909;
 
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -19,5 +20,9 @@ public class Demo090911 {
 
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1,
                 2, 2L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(2));
+        CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.get(2);
     }
 }
