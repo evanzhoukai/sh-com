@@ -22,8 +22,6 @@ public class Demo091602 {
         System.out.println(max);
     }
 
-    static int MAX_LENGTH = Integer.MIN_VALUE;
-
 
     public static int demo(String s) {
         int[] hash = new int[123];
