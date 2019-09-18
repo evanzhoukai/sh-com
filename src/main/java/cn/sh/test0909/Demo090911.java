@@ -1,19 +1,28 @@
 package cn.sh.test0909;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhoukai
- * @Description:
- * @date 2019-09-11 21:17
+ * @date 2019/9/12
  */
 public class Demo090911 {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
+                ExecutorService executorService = Executors.newFixedThreadPool(1);
+                ExecutorService executorService1 = Executors.newCachedThreadPool();
+                ExecutorService executorService2 = Executors.newSingleThreadExecutor();
 
-        Map<String,String> map = new ConcurrentHashMap<>(8);
-
-    }
+                ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1,
+                        2, 2L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(2));
+                CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
+                list.add(1);
+                list.add(2);
+                list.get(2);
+        }
 }
