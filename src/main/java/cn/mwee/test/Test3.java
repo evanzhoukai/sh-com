@@ -5,10 +5,14 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author zhoukai
  * @Description:
- * @date 2019-09-18
+ * @date 2019-09-19
  */
 public class Test3 {
 
+    /***
+     * 守护线程。
+     * @param args
+     */
     public static void main(String[] args) {
         Thread thread = new Thread(new Daemon(), "Deamon");
         thread.setDaemon(true);

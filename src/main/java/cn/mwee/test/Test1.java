@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 /**
  * @author zhoukai
- * @date 2019/9/18
+ * @date 2019/9/19
  */
 public class Test1 {
 
@@ -20,7 +20,7 @@ public class Test1 {
         // 参数二：lockedSynchronizers dump all locked ownable synchronizers
         // 都设置为false
         ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
-        // 打印
-        Arrays.stream(threadInfos).forEach(val-> System.out.println("【Thread Id】: "+val.getThreadId()+" =====【Thread Name】 : "+val.getThreadName()));
+        // 打印结果
+        Arrays.stream(threadInfos).forEach(val -> System.out.println("【Thread Id】: " + val.getThreadId() + " =====【Thread Name】 : " + val.getThreadName()));
     }
 }

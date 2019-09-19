@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author zhoukai
  * @Description:
- * @date 2019-09-18
+ * @date 2019-09-19
  */
 public class Test2 {
 
@@ -15,6 +15,12 @@ public class Test2 {
 
     private static volatile boolean notEnd = true;
 
+    /**
+     * 设置线程的优先级
+     *
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
         List<Job> list = new ArrayList<>();

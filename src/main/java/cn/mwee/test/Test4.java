@@ -7,6 +7,12 @@ package cn.mwee.test;
 public class Test4 {
     private static final long count = 100001;
 
+    /**
+     * 多线程 与单线程 速度比较。
+     *
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         concurrent();
         serial();
