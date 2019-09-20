@@ -13,17 +13,22 @@ public class Test3 {
      * 守护线程。
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Thread thread = new Thread(new Daemon(), "Deamon");
         thread.setDaemon(true);
         thread.start();
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("hook 。结束了。")));
+        TimeUnit.SECONDS.sleep(5);
     }
 
     static class Daemon implements Runnable {
         @Override
         public void run() {
             try {
-                TimeUnit.SECONDS.sleep(10);
+                while (true) {
+                    TimeUnit.SECONDS.sleep(1);
+                    System.out.println("Daemon Thread=====");
+                }
             } catch (Exception e) {
 
             } finally {
