@@ -12,6 +12,7 @@ public class OOMTest {
         int max = 100;
         for (int i = 0; i < max; i++) {
             Thread t = new Thread() {
+                @Override
                 public void run() {
                     try {
                         Thread.sleep(50);
