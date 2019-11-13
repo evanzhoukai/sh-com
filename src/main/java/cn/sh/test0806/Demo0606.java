@@ -1,6 +1,5 @@
 package cn.sh.test0806;
 
-import org.junit.Test;
 import org.springframework.cglib.proxy.InvocationHandler;
 import org.springframework.cglib.proxy.Proxy;
 
@@ -12,7 +11,6 @@ import java.lang.reflect.Method;
  */
 public class Demo0606 {
 
-    @Test
     public void test1() {
         /**
          * 三个参数

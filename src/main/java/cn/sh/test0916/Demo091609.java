@@ -1,6 +1,5 @@
 package cn.sh.test0916;
 
-import cn.mwee.base_common.helper.concurrent.MwThreadPoolTaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.ThreadPoolExecutor;
@@ -21,8 +20,6 @@ public class Demo091609 {
         executor.setThreadNamePrefix("tsak-asyn");
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
         executor.initialize();
-        MwThreadPoolTaskExecutor threadPoolTaskExecutor = new MwThreadPoolTaskExecutor(executor);
-        threadPoolTaskExecutor.execute(() -> print("dd"));
         Runtime.getRuntime().addShutdownHook(new Thread(() -> System.out.println("结束。")));
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
