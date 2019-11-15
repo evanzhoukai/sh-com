@@ -1,4 +1,9 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'maven'
+    id 'idea'
+}
+
 
 group = 'cn.mwee'
 version = '1.0-SNAPSHOT'

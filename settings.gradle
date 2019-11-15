@@ -1,2 +1,3 @@
 rootProject.name = 'sh-com'
+include 'sh-com-common'
 
